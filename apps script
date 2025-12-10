@@ -1,0 +1,18 @@
+<div class="status-box">
+  <h3>🔍 Cek Status Pembayaran</h3>
+  <form id="statusForm" onsubmit="checkStatus(event)">
+    <input type="text" id="idWarga" name="idWarga" placeholder="Masukkan ID Warga" required>
+    <button type="submit" class="btn">Cek</button>
+  </form>
+  <p id="statusResult"></p>
+</div>
+
+<script>
+  function checkStatus(e) {
+    e.preventDefault();
+    const idWarga = document.getElementById('idWarga').value;
+    google.script.run.withSuccessHandler(function(result) {
+      document.getElementById('statusResult').innerText = 'Status Pembayaran: ' + result;
+    }).checkStatus(idWarga);
+  }
+</script>
