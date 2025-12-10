@@ -55,7 +55,7 @@ section.active {
   border-radius: 8px; 
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-
+/*================================================================ FOOTER =======================================*/
 footer {  
   position: fixed;
   bottom: 0;
@@ -66,6 +66,7 @@ footer {
   text-align: center;
   padding: 5px 0;
   font-size: 12px;
+  z-index: 9999; /* pastikan footer selalu di depan */
 }
 
 /*================================================================= Pengumuman ============================*/
@@ -346,4 +347,5 @@ body {
   background-color: #f7f7f7;
   color: #333;
   font-family: "Segoe UI", Roboto, sans-serif;
+
 }
