@@ -299,7 +299,7 @@ footer {
   padding: 15px;
   text-align: center;
   border-bottom: 1px solid #ddd;
-  z-index: 1000;
+  z-index: auto;
 }
 
 #button-group button {
@@ -349,3 +349,4 @@ body {
   font-family: "Segoe UI", Roboto, sans-serif;
 
 }
+
