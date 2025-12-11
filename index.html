@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rukun Warga 19 Cotton Field</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style 1211 v1.css">
 </head>
 <body>
   <header>
@@ -141,13 +141,23 @@
       <a href="https://docs.google.com/forms/d/e/1FAlpQLSePTL5jUKm_ZfZl3cWB3xmDrJ6ysWDxPlllH83JQ7HOpVOrxQ/viewform" target="_blank" class="btn">🧾 Lapor Pembayaran</a>
 
       <div class="status-box">
-        <h3>🔍 Cek Status Pembayaran</h3>
-        <form id="statusForm" onsubmit="checkStatus(event)">
-          <input type="text" id="idWarga" name="idWarga" placeholder="Masukkan ID Warga" required>
-          <button type="submit" class="btn">Cek</button>
-        </form>
-        <p id="statusResult"></p>
-      </div>
+		<h3>🔍 Cek Status Pembayaran</h3>
+		<form id="statusForm" onsubmit="checkStatus(event)">
+			<input type="text" id="idWarga" name="idWarga" placeholder="Masukkan ID Warga" required>
+			<button type="submit" class="btn">Cek</button>
+		</form>
+		<p id="statusResult"></p>
+		</div>
+
+		<script>
+		function checkStatus(e) {
+			e.preventDefault();
+			const idWarga = document.getElementById('idWarga').value;
+			google.script.run.withSuccessHandler(function(result) {
+			document.getElementById('statusResult').innerText = 'Status Pembayaran: ' + result;
+			}).checkStatus(idWarga);
+		}
+		</script>
 
       <div class="rekap-box">
         <h3>📊 Rekapitulasi IPL RW</h3>
@@ -177,6 +187,7 @@
 	<!-- Tombol tetap di atas -->
 	<div id="button-group" style="position:sticky; top:0; background:#fff; padding:10px; text-align:center; border-bottom:1px solid #ccc;">
 		<button onclick="tampilkanKonten('struktur-organisasi')">Struktur Organisasi</button>
+		<button onclick="tampilkanKonten('program-kerja')">Program Kerja</button>
 		<button onclick="tampilkanKonten('sop')">SOP</button>
 		<button onclick="tampilkanKonten('informasi-jasa')">Informasi Jasa</button>
 	</div>
@@ -190,6 +201,13 @@
 
 		<div id="sop" class="konten" style="display:none;">
 			<p>Hubungi kami di: <strong>rw19.cottonfield2025@gmail.com</strong></p>
+		</div>
+		
+		<div id="program-kerja" class="konten" style="display:none; height:100vh; margin:0; padding:0;">
+			<iframe 
+				src="https://docs.google.com/spreadsheets/d/1niA-ktpKD3xLa1Zw9-6C2DaN_W9yIDZRK4gqeKubLu4/htmlembed?rm=embedded"
+				style="width:100%; height:100%; border:0; margin:0; padding:0;">
+			</iframe>
 		</div>
 		
 		<div id="informasi-jasa" class="konten" style="display:none; height:100vh; margin:0; padding:0;">
