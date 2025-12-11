@@ -141,7 +141,7 @@ footer {
 .pengumuman-foto.active {
   opacity: 1;
 }
-/* Tombol dan animasi tetap sama */
+/* ======================================== Tombol dan animasi Informasi tetap sama =======================*/
 .toggle-btn {
   background-color: #a50034;
   color: #fff;
@@ -151,6 +151,8 @@ footer {
   cursor: pointer;
   font-size: 15px;
   transition: background 0.3s ease;
+  width: auto;
+  max-width: 100%;
 }
 
 .toggle-btn:hover {
@@ -349,4 +351,5 @@ body {
   font-family: "Segoe UI", Roboto, sans-serif;
 
 }
+
 
