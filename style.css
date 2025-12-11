@@ -55,7 +55,7 @@ section.active {
   border-radius: 8px; 
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-/*================================================================ FOOTER =======================================*/
+/* ================================================================ FOOTER ================================= */
 footer {  
   position: fixed;
   bottom: 0;
@@ -66,7 +66,6 @@ footer {
   text-align: center;
   padding: 5px 0;
   font-size: 12px;
-  z-index: 9999; /* pastikan footer selalu di depan */
 }
 
 /*================================================================= Pengumuman ============================*/
@@ -141,7 +140,7 @@ footer {
 .pengumuman-foto.active {
   opacity: 1;
 }
-/* ======================================== Tombol dan animasi Informasi tetap sama =======================*/
+/* ============================== Tombol dan animasi Informasi tetap sama================================== */
 .toggle-btn {
   background-color: #a50034;
   color: #fff;
@@ -154,6 +153,7 @@ footer {
   width: auto;
   max-width: 100%;
 }
+
 
 .toggle-btn:hover {
   background-color: #87002a;
@@ -297,11 +297,14 @@ footer {
 #button-group {
   position: sticky;
   top: 0;
-  background: #ffffff;
-  padding: 15px;
+  background: #fff;
+  padding: 10px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
-  z-index: auto;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
 #button-group button {
@@ -318,6 +321,19 @@ footer {
   box-shadow: 0 4px 10px rgba(165, 0, 52, 0.2);
   position: relative;
   overflow: hidden;
+}
+/* Responsif untuk layar HP */
+@media (max-width: 600px) {
+  #button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #button-group button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
 }
 
 #button-group button::before {
@@ -349,7 +365,4 @@ body {
   background-color: #f7f7f7;
   color: #333;
   font-family: "Segoe UI", Roboto, sans-serif;
-
 }
-
-
