@@ -22,18 +22,65 @@
     <a href="#" onclick="showTab('ipl')">IPL</a>
     <a href="#" onclick="showTab('laporan')">Laporan Pengaduan</a>
     <a href="#" onclick="showTab('informasi')">Informasi</a>
-    <a href="#" onclick="showTab('admin')">Admin</a>
+    <a href="#" onclick="showTab('layanan')">Layanan</a>
   </nav>
 
   <section id="pengumuman" class="active">
     <h2>📢 Pengumuman</h2>
 	
+	<div class="pengumuman-card fade-in3">
+		  <div class="slideshow-container"> 
+			<img src="img/ipl.jpeg" class="undangan-kerja-bakti active" alt="Foto Kerja Bakti 1">
+			</div> 
+		<h3>Peralihan Rekening Pembayaran IPL 2026</h3>
+		<p>20 Desember 2025</p>
+		<button class="toggle-btn" onclick="toggleInfo(this)">Lihat Detail</button>
+		<div class="pengumuman-detail">
+			<p><strong>Peralihan nomor rekening pembayaran IPL RW19 Cotton Field efektif mulai bulan januari 2026.</strong></p>
+			<ul>
+				<li>Salin nomor rekening masing-masing RT pada menu IPL --> lalu klik tombol nomor rekening sesuai RT masing-masing.</li>
+			</ul>
+			<p><strong>Mohon Bapak/Ibu untuk melakukan pembayaran ke rekening tersebut untuk periode bulan Januari 2026 dan seterusnya.</strong></p>
+			<p><strong>Demi tertib administrasi, mohon kirimkan bukti transfer kepada ketua RT masing-masing.</strong></p>
+		</div>
+		<script>
+		function toggleInfo(button) {
+			const detail = button.nextElementSibling;
+			const isVisible = detail.style.display === "block";
+			detail.style.display = isVisible ? "none" : "block";
+			button.textContent = isVisible ? "Lihat Detail" : "Tutup Detail";
+		}
+		</script>
+	</div>
+	<div class="pengumuman-card fade-in2">
+		  <div class="slideshow-container"> 
+			<img src="img/karangtaruna.jpeg" class="undangan-kerja-bakti active" alt="Foto Kerja Bakti 1">
+		</div> 
+		<h3>Pendaftaran Karang Taruna RW19 Cotton Field</h3>
+		<p>20 Desember 2025</p>
+		<button class="toggle-btn" onclick="toggleInfo(this)">Lihat Detail</button>
+
+		<div class="pengumuman-detail">
+			<p><strong>Wadah pengembangan generasi muda yang bertaqwa, terampil dan berjiwa sosial.</strong></p>
+			<p>Jangan hanya jadi penonton perubahan, jadilah pemain yang menciptakan sejarah di lingkunganmu sendiri ! </p>
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLSers56lsGsi3_ObNAq3ybSYdbWiBymrWqaakXmUBTvFLOeTcg/viewform" target="_blank" class="btn">🧾 Pendaftaran</a>
+		</div>
+		<script>
+		function toggleInfo(button) {
+			const detail = button.nextElementSibling;
+			const isVisible = detail.style.display === "block";
+			detail.style.display = isVisible ? "none" : "block";
+			button.textContent = isVisible ? "Lihat Detail" : "Tutup Detail";
+		}
+		</script>
+	</div>
 	<div class="pengumuman-card fade-in1">
 		  <div class="slideshow-container"> 
 			<img src="img/kerjabakti.jpeg" class="undangan-kerja-bakti active" alt="Foto Kerja Bakti 1">
 
 		</div> 
 		<h3>Undangan Kerja Bakti & Perkenalan Pengurus Baru RW 19</h3>
+		<p>7 Desember 2025</p>
 		<button class="toggle-btn" onclick="toggleInfo(this)">Lihat Detail</button>
 
 		<div class="pengumuman-detail">
@@ -57,7 +104,7 @@
 		</script>
 
 	</div>
-	<div class="pengumuman-card fade-in2">
+	<div class="pengumuman-card fade-in">
 		 <div class="slideshow-container">
 			<img src="img/serahterima1.jpeg" class="pengumuman-foto active" alt="Foto Serah Terima 1">
 			<img src="img/serahterima2.jpeg" class="pengumuman-foto" alt="Foto Serah Terima 2">
@@ -66,6 +113,7 @@
 		</div>
 
 		<h3>Serah Terima Jabatan Pengurus RW19 Cotton Field 2025</h3>
+		<p>23 November 2025</p>
 		<button class="toggle-btn" onclick="toggleInfo(this)">Lihat Detail</button>
 
 		<div class="pengumuman-detail">
@@ -77,12 +125,10 @@
 			</ul>
 
 			<p><strong>Kami ucapkan terima kasih yang sedalam-dalam nya kepada pengurus lama atas dedikasinya. </strong></p>
-			
-		</div>
+			</div>
 		<script>
 		let slideIndex = 0;
 		const slides = document.querySelectorAll('.pengumuman-foto');
-
 		function showSlides() {
 			slides.forEach((slide, i) => {
 				slide.classList.remove('active');
@@ -91,9 +137,7 @@
 			slides[slideIndex - 1].classList.add('active');
 			setTimeout(showSlides, 3000); // Ganti foto setiap 4 detik
 		}
-
 		document.addEventListener("DOMContentLoaded", showSlides);
-
 		function toggleInfo(button) {
 			const detail = button.nextElementSibling;
 			const isVisible = detail.style.display === "block";
@@ -102,7 +146,6 @@
 		}
 		</script>
 	</div>
-	
   </section>
   
   <section id="galery">
@@ -136,7 +179,78 @@
   <section id="ipl">
     <h2>Informasi Pembayaran IPL</h2>
     <p>Data iuran pemeliharaan lingkungan (IPL) warga dapat ditampilkan di sini.</p>
+	<h3>Daftar Nomor Rekening RT:</h3>
+	
+		<meta charset="UTF-8">
+    <title>Salin Rekening BRI</title>
+   
+    <div class="container-rekening">
+        
+        <div>
+			<span class="nama-rekening">a.n. RT 01 RW 19 CIKEAS UDIK</span>
+            <button class="btn-salin" onclick="salinRekening('038401003271561', 'msg1')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="logo-bank">
+                RT 1: 038401003271561
+            </button>
+			
+            <div id="msg1" class="notif">Nomor rekening berhasil disalin!</div>
+        </div>
 
+        <div>
+			<span class="nama-rekening">a.n. RT 02 RW 19 CIKEAS UDIK</span>
+            <button class="btn-salin" onclick="salinRekening('038401003272567', 'msg2')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="logo-bank">
+                RT 2: 038401003272567
+            </button>
+            <div id="msg2" class="notif">Nomor rekening berhasil disalin!</div>
+        </div>
+		
+		 <div>
+			<span class="nama-rekening">a.n. RT 03 RW 19 CIKEAS UDIK</span>
+            <button class="btn-salin" onclick="salinRekening('038401002886567', 'msg3')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="logo-bank">
+                RT 3: 038401002886567
+            </button>
+            <div id="msg3" class="notif">Nomor rekening berhasil disalin!</div>
+        </div>
+
+        <div>
+			<span class="nama-rekening">a.n. RT 04 RW 19 CIKEAS UDIK</span>
+            <button class="btn-salin" onclick="salinRekening('038401003273563', 'msg4')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="logo-bank">
+                RT 4: 038401003273563
+            </button>
+            <div id="msg4" class="notif">Nomor rekening berhasil disalin!</div>
+        </div>
+	<!--<div style="height: 20px;"></div>	-->
+	<h3>Nomor Rekening RW19:</h3>	
+	<div>
+			<span class="nama-rekening">a.n. RW 19 CIKEAS UDIK</span>
+            <button class="btn-salin" onclick="salinRekening('038401003275565', 'msg5')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="BRI" class="logo-bank">
+                RW 19: 038401003275565
+            </button>
+            <div id="msg5" class="notif">Nomor rekening berhasil disalin!</div>
+        </div>
+
+    </div>
+
+    <script>
+        function salinRekening(nomor, elementId) {
+            navigator.clipboard.writeText(nomor).then(() => {
+                const pesan = document.getElementById(elementId);
+                pesan.style.display = 'block';
+
+                setTimeout(() => {
+                    pesan.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin: ', err);
+            });
+        }
+    </script>
+
+	<div style="height: 20px;"></div>	
     <div class="ipl-menu">
       <a href="https://docs.google.com/forms/d/e/1FAlpQLSePTL5jUKm_ZfZl3cWB3xmDrJ6ysWDxPlllH83JQ7HOpVOrxQ/viewform" target="_blank" class="btn">🧾 Lapor Pembayaran</a>
 
@@ -227,9 +341,10 @@
 			}
 		</script>
 	</div>
-</section>
+	</section>
 
-  <section id="admin">
+  <section id="layanan">
+	
     <h2>Dashboard Admin</h2>
     <div id="loginForm">
       <p>Masukkan kata sandi untuk masuk ke dashboard:</p>
@@ -336,5 +451,3 @@
 		
 </body>
 </html>
-
-
