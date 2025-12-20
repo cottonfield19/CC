@@ -366,3 +366,50 @@ body {
   font-family: "Segoe UI", Roboto, sans-serif;
 }
 
+
+
+        /* Container untuk mengatur tombol agar turun ke bawah */
+        .container-rekening {
+            display: flex;
+            flex-direction: column; /* Ini yang membuat tombol berderet ke bawah */
+            gap: 15px;             /* Jarak antar tombol */
+            max-width: 350px;      /* Lebar maksimal wadah */
+        }
+
+        .btn-salin {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #00529C; /* Biru khas BRI */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn-salin:hover {
+            background-color: #003d75;
+        }
+
+        /* Gaya Logo Bank */
+        .logo-bank {
+            width: 40px; /* Ukuran logo */
+            height: auto;
+            margin-right: 12px;
+            background: white;
+            padding: 2px;
+            border-radius: 4px;
+        }
+
+        .notif {
+            margin-top: 5px;
+            color: #28a745;
+            display: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    
+
